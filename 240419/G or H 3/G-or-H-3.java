@@ -27,8 +27,8 @@ public class Main {
         }
 
         int tmpSum = answer;
-        for (int idx = rt; idx < locations.length - k; idx++) {
-            tmpSum = tmpSum - locations[lt] + locations[rt];
+        while (lt < locations.length - k - 1) {
+            tmpSum = tmpSum - locations[lt++] + locations[rt++];
             answer = Math.max(tmpSum, answer);
         }
         System.out.println(answer);
