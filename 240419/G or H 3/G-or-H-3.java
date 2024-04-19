@@ -10,7 +10,7 @@ public class Main {
         int n = inputs[0], k = inputs[1];
         int[] locations = new int[10_001];
 
-        for (int iter = 0; iter < k; iter++) {
+        for (int iter = 0; iter < n; iter++) {
             String[] inputLine = br.readLine().split(" ");
             int idx = Integer.parseInt(inputLine[0]);
             if (inputLine[1].equals("G")) {
