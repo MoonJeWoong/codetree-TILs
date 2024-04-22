@@ -1,23 +1,29 @@
 N = int(input())
 nums = list()
-
-for _ in range(N):
+num_accum = [0] * N
+for i in range(N):
     n = int(input())
     nums.append(n)
+    if i == 0:
+        num_accum[i] = n
+    else:
+        num_accum[i] = n + num_accum[i-1]
 
 max_size = 0
+if num_accum[-1] % 7 == 0:
+    max_size = N
+
 for size in range(N,-1,-1):
-    # if size < 3: break
-    init_sum =sum(nums[0:size])
-    # print(size, init_sum, nums[0:size], N-size)
-    if init_sum % 7 == 0:
-        max_size = size
-        break
-    for i in range(N-size):
-        # print("\t",i, size+i, '\t', nums[i],nums[size+i])
-        init_sum = init_sum - nums[i] + nums[size+i]
-        if init_sum % 7 == 0:
-            max_size = size
+    # print(size)
     if max_size > 0:
         break
+    for i in range(N-size):
+        j = size+i
+        val = num_accum[j]- num_accum[i]
+        if val % 7 == 0:
+            max_size = size
+            break
+
+            
+
 print(max_size)
