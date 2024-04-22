@@ -20,11 +20,11 @@ public class Main {
 
         int answer = Integer.MIN_VALUE;
         int tmpSum;
-        for (int row = 0; row <= maps.length - n; row++) {
-            for (int col = 0; col <= maps.length - n; col++) {
+        for (int row = 0; row <= maps.length - 3; row++) {
+            for (int col = 0; col <= maps.length - 3; col++) {
                 tmpSum = 0;
-                for (int windowRow = row; windowRow < row + n; windowRow++) {
-                    for (int windowCol = col; windowCol < col + n; windowCol++) {
+                for (int windowRow = row; windowRow < row + 3; windowRow++) {
+                    for (int windowCol = col; windowCol < col + 3; windowCol++) {
                         if (maps[windowRow][windowCol] == 1) {
                             tmpSum++;
                         }
