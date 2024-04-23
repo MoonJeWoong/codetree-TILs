@@ -6,7 +6,7 @@ for i in range(N):
 
 
 global max_val
-max_val = 0
+max_val = 1
 
 def is_overlap(x1,x2, lines):
     for a,b in lines:
