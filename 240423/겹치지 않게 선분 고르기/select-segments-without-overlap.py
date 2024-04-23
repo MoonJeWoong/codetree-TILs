@@ -6,7 +6,7 @@ for i in range(N):
 
 
 global max_val
-max_val = 1
+max_val = 0
 
 def is_overlap(x1,x2, lines):
     for a,b in lines:
@@ -16,18 +16,20 @@ def is_overlap(x1,x2, lines):
     return False
 
 def backtrack(cnt, selected):
+    global max_val
     if cnt == N:
-        global max_val
+
         max_val = max(len(selected),max_val)
         return
+
     
-    for i, (x1,x2) in enumerate(lines):
-        if is_overlap(x1,x2,selected):
-            continue
+    x1, x2 = lines[cnt]
+    if not is_overlap(x1,x2,selected):
         selected.append((x1,x2))
         backtrack(cnt+1, selected)
         selected.pop()
-
+    backtrack(cnt+1, selected)
+    
 selected = list()
 backtrack(0,selected)
 print(max_val)
