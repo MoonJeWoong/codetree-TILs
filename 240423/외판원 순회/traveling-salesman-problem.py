@@ -18,6 +18,7 @@ def backtrack(cur, visited, cost):
 
     for i, d in enumerate(row):
         if i in visited or i == cur: continue
+        if d == 0: continue
         visited.append(i)
         backtrack(i,visited, cost+d)
         visited.pop()
