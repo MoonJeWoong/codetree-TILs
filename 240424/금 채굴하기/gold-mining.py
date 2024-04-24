@@ -47,7 +47,7 @@ for x in range(N):
                 if not ((0<=(x+dx)<N) and (0<=(y+dy)<N)): continue
                 if board[x+dx][y+dy] == 1:
                     num_coin += 1
-            if num_coin*M - cost > 0:
+            if num_coin*M - cost >= 0:
                 max_coin = max(num_coin, max_coin)
             
 print(max_coin)
