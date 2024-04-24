@@ -40,7 +40,7 @@ cost_k = lambda k: (k*k)+(k+1)*(k+1)
 max_coin = 0
 for x in range(N):
     for y in range(N):
-        for k in range(N):
+        for k in range(N+1):
             cost = cost_k(k)
             num_coin = 0
             for dx,dy in generate_area(k):
