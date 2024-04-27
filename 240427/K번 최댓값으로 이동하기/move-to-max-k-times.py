@@ -39,7 +39,7 @@ def move_next(x,y):
             candidiate.append((v,nx,ny))    
 
     if not candidiate:
-        return -1,-1
+        return x,y
     
     candidiate.sort(key=lambda x: (-x[0],x[1],x[2]))
     nv,nx,ny = candidiate[0]
