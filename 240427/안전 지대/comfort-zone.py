@@ -3,12 +3,12 @@ DEBUG = True
 dprint = lambda x: print(x) if DEBUG else False
 
 N, M = list(map(int,input().split()))
-K_set = set()
+max_K = 0
 board = list()
 for i in range(N):
     line = list(map(int,input().split()))
     board.append(line)
-    K_set.update(set(line))
+    max_K = max(max_K, max(line))
 
 
 adj_point = lambda x,y: [(x+dx,y+dy) for dx,dy in [(-1,0),(0,1),(1,0),(0,-1)]]
@@ -42,7 +42,7 @@ def find_safty_area(k):
 
 
 area_cnt_list = list()
-for K in K_set:
+for K in range(1,max_K+1):
     safe_cnt = find_safty_area(K)
     area_cnt_list.append((safe_cnt,K))
 area_cnt_list.sort(key=lambda x: (-x[0],x[1]))
