@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static void initMap(Map<Integer, Integer> obj) {
-        for (int number = 0; number < 10; number++) {
+        for (int number = 1; number <= 100; number++) {
             obj.put(number, 0);
         }
     }
