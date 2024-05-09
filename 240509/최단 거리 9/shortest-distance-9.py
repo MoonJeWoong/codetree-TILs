@@ -26,7 +26,7 @@ for i in range(1,N+1):
             dist[j] = dist[min_index] + graph[min_index][j]
             path[j] = min_index
 
-print(path[end])
+print(dist[end])
 x = end
 nodes = [end]
 
