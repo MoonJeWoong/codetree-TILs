@@ -7,30 +7,25 @@ for i in range(M):
 visited = [False for i in range(N+1)]
 dist = [float('inf') for i in range(N+1)]
 
-import heapq as hq
+from heapq import heappush as push, heappop as pop
 
-pq = list()
-hq.heappush(pq,(0,N))
+que = list()
+
+dist[N] = 0
+push(que, (0,N))
 
 max_cost = 0
-dist[N] = 0
-# print(graph)
-
-while pq:
-    cost, idx = hq.heappop(pq)
-    # print(idx)
-    if visited[idx]: continue
-    visited[idx] = True
+while que:
+    cost, index = pop(que)
+    if visited[index]: continue
+    visited[index] = True
 
     max_cost = max(cost, max_cost)
-    
-    for near_cost, near_idx in graph[idx]:
-        
-        new_cost = dist[idx] + near_cost
-        # print("\t", new_cost, near_cost,near_idx)
-        if dist[near_idx] > new_cost:
-            dist[near_idx] = new_cost
-            hq.heappush(pq, (new_cost, near_idx))
 
-# print(dist)
+    for next_cost, next_index in graph[index]:
+
+        new_cost = dist[index] + next_cost
+        if dist[next_index] > new_cost:
+            dist[next_index] = new_cost
+            push(que, (new_cost, next_index))
 print(max_cost)
