@@ -35,4 +35,5 @@ while pq:
 
 
 for i in range(1, N + 1):
-    print(dist[i])
+    v = dist[i] if dist[i] <INT_MAX else -1
+    print(v)
