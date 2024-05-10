@@ -28,5 +28,9 @@ for i in range(1,1000+1):
     for j in range(1,1000+1):
         cost, time = graph[min_idx][j]
         dist[j] = min(dist[j], (min_cost + cost,min_time+time))
-for v in dist[B]:
-    print(v,end=' ')
+if dist[B][0] == float('inf'):
+    print(-1,-1)
+else:
+    for v in dist[B]:
+
+        print(v,end=' ')
