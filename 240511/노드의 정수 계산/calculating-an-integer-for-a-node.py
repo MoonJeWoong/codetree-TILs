@@ -15,11 +15,16 @@ for i in range(2,N+1):
 
 def dfs(v):
     accum_nums[v] += nums[v]
-    if not tree[v]: return
+    if not tree[v]: 
+        return
     
     for c in tree[v]:
         dfs(c)
-        accum_nums[v] += accum_nums[c]
+        if accum_nums[c] > 0:
+            accum_nums[v] += accum_nums[c]
     # accum_nums[v] += nums[v]
+# print(tree)
+# for i in range(1,N+1):
+#     print(i,'\t',nums[i])
 dfs(1)
 print(accum_nums[1])
