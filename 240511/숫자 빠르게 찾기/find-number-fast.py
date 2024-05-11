@@ -3,7 +3,7 @@ nums = list(map(int,input().split()))
 
 def find_idx(target):
     left = 0
-    right = len(nums)
+    right = len(nums)-1
 
     while left <= right:
         mid = (left + right)//2
