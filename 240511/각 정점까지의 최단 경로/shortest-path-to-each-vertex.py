@@ -3,7 +3,7 @@ from heapq import heappop as pop, heappush as push
 N, M = list(map(int,input().split()))
 K = int(input())
 graph = defaultdict(list)
-for _ in range(N):
+for _ in range(M):
     v1,v2,w = list(map(int,input().split()))
     graph[v1].append((w,v2))
     graph[v2].append((w,v1))
