@@ -1,5 +1,9 @@
-N = int(input())
 from collections import defaultdict
+import sys
+sys.setrecursionlimit(100000)
+
+N = int(input())
+
 tree = defaultdict(list)
 for i in range(N-1):
     v1,v2 = list(map(int,input().split()))
