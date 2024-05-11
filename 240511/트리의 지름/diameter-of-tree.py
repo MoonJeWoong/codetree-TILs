@@ -1,20 +1,25 @@
+from collections import defaultdict
 N = int(input())
-graph = [[0 for _ in range(N+1)] for _ in range(N+1)]
+
+children = defaultdict(list)
+distance = dict()
 for _ in range(N-1):
     v1,v2,d = list(map(int,input().split()))
-    graph[v1][v2] = d
+    children[v1].append(v2)
+    distance[(v1,v2)] = d
 
 global max_d
 max_d = 0
 
 def dfs(v,d):
     global max_d
-    children = graph[v]
-    if sum(children) == 0:
+    child = children[v]
+
+    if not child:
         max_d = max(max_d, d)
         return 
-    for i,c_d in enumerate(children):
-        if c_d == 0: continue
-        dfs(i,d+c_d)
+    for c in child:
+        new_d = distance[(v,c)]
+        dfs(c,d+new_d)
 dfs(1,0)
 print(max_d)
