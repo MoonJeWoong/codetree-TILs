@@ -25,6 +25,7 @@ s = 0
 for _ in range(Q):
     order = input()
     if order == 'clear':
+        command = order
         val = None
     else:
         command, val = order.split()
