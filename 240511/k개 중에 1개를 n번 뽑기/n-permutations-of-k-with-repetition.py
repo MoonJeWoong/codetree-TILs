@@ -1,14 +1,16 @@
 K, N = list(map(int,input().split()))
 
 
-def dfs(v,size):
+def dfs(arr):
     global K,N
-
-    if size == N+1: 
-        print(v)
-        return
+    if len(arr) == N:
+        for a in arr:
+            print(a,end=' ')
+        print()
+        return 
     for k in range(1,K+1):
-        if v > 0:
-            print(v, end=' ') 
-        dfs(k,size+1)
-dfs(0,1)
+        arr.append(k)
+        dfs(arr)
+        arr.pop()
+    
+dfs(list())
