@@ -6,16 +6,10 @@ for i in range(N-1):
     tree[v1].append(v2)
     tree[v2].append(v1)
 
-dp = [[0,0] for _ in range(N+1)] 
+dp = [[0,1] for _ in range(N+1)] 
 
 
 def dfs(p,v):
-    if len(tree[v]) == 1 and p != -1:
-        # leaf
-        dp[v][0] = 0
-        dp[v][1] = 1
-        return 
-    dp[v][1] += 1
     for c in tree[v]:
         if c == p: continue
         dfs(v,c)
