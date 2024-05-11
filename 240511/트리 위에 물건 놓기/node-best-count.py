@@ -14,6 +14,6 @@ def dfs(p,v):
         if c == p: continue
         dfs(v,c)
         dp[v][0] += dp[c][1]
-        dp[v][1] += dp[c][0]
+        dp[v][1] += min(dp[c][1],dp[c][0])
 dfs(-1,1)
 print(min(dp[1][0],dp[1][1]))
