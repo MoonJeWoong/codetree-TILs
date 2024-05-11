@@ -22,6 +22,9 @@ def get_cnt(target):
         else:
             left = mid + 1
     return upper_bound-lower_bound
+from collections import Counter
+counter = Counter(nums)
 
 for i in range(M):
-    print(get_cnt(int(input())))
+    # print(get_cnt(int(input())))
+    print(counter[int(input())])
