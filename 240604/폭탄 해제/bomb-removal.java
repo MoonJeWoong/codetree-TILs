@@ -25,7 +25,7 @@ class Bomb {
     @Override
     public String toString() {
         return "code : " + this.code + "\n"
-            "color : " + this.color + "\n"
-            "second : " + this.seconds;
+            + "color : " + this.color + "\n"
+            + "second : " + this.seconds;
     }
 }
