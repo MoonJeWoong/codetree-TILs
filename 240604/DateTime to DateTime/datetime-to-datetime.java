@@ -9,9 +9,14 @@ public class Main {
         int[] inputs = Arrays.stream(br.readLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-        
-        System.out.println(calculateMinute(inputs[0], inputs[1], inputs[2]) - calculateMinute(11, 11, 11));
-        
+
+        int result = calculateMinute(inputs[0], inputs[1], inputs[2]) - calculateMinute(11, 11, 11);
+
+        if (result < 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(result);
+        }
     }
 
     public static int calculateMinute(int day, int hour, int minute) {
