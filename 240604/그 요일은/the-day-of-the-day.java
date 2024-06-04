@@ -24,6 +24,11 @@ public class Main {
             difference = calculateDay(inputDates[2], inputDates[3]) - calculateDay(firstMonth+1, firstDay-dayOfMonths[firstMonth]);
         }
 
+        if (difference < 0) {
+            System.out.println(0);
+            return;
+        }
+
         System.out.println(difference / 7 + 1);
     }
 
