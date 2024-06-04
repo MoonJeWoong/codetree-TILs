@@ -3,7 +3,7 @@ import java.util.stream.*;
 import java.io.*;
 
 public class Main {
-    private static int[] dayOfMonth = new int[] {0, 30, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    private static int[] dayOfMonth = new int[] {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
