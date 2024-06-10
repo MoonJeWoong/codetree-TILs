@@ -28,8 +28,8 @@ public class Main {
     public static void checkSquare(int[][] plane, int[] inputPoint) {
         int offset = 100;
         
-        int x1 = inputPoint[0];
-        int y1 = inputPoint[1];
+        int x1 = inputPoint[0] + offset;
+        int y1 = inputPoint[1] + offset;
         int x2 = x1 + 8;
         int y2 = y1 + 8;
 
