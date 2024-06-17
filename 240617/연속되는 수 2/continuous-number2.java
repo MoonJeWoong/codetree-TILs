@@ -21,6 +21,7 @@ public class Main {
             count = 1;
             num = inputNum;
         }
+        answer = Math.max(answer, count);
 
         System.out.println(answer);
     }
