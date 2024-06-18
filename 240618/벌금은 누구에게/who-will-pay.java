@@ -21,6 +21,10 @@ public class Main {
             }
         }
 
-        System.out.println(answer);
+        if (answer == 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(answer);
+        }
     }
 }
