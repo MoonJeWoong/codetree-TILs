@@ -38,21 +38,27 @@ public class Main {
         int cursorB = 0;
         int answer = 0;
 
-        while (cursorA != timeA || cursorB != timeB) {
+        while (cursorA < timeA || cursorB < timeB) {
+            // System.out.println("cursorA: " + cursorA +", cursorB: " + cursorB + ", checkFlag: " + checkFlag);
+            // System.out.println(posA[cursorA] + " " + posB[cursorB]);
             if (checkFlag && posA[cursorA] == posB[cursorB]) {
                 answer++;
                 checkFlag = false;
             }
 
-            if (cursorA != timeA) {
+            if (cursorA < timeA) {
                 cursorA++;
             }
-            if (cursorB != timeB) {
+            if (cursorB < timeB) {
                 cursorB++;
             }
             if (posA[cursorA] != posB[cursorB]) {
                 checkFlag = true;
             }
+        }
+
+        if (checkFlag && posA[cursorA] == posB[cursorB]) {
+            answer++;
         }
 
         System.out.println(answer);
@@ -65,6 +71,7 @@ public class Main {
             } else {
                 pos[cursor] = pos[cursor - 1] + 1;
             }
+            cursor++;
         }
         
     }
