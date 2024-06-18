@@ -13,8 +13,8 @@ public class Main {
         
         int n = inputs[0], m = inputs[1];
 
-        int[] posA = new int[MAX_SIZE];
-        int[] posB = new int[MAX_SIZE];
+        int[] posA = new int[MAX_SIZE + 1];
+        int[] posB = new int[MAX_SIZE + 1];
 
         int timeA = 0;
         int timeB = 0;
