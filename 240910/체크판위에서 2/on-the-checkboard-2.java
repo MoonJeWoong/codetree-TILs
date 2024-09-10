@@ -18,6 +18,11 @@ public class Main {
             grid[iter] = br.readLine().split(" ");
         }
 
+        if (grid[0][0].equals(grid[n-1][m-1])) {
+            System.out.println(0);
+            return;
+        }
+
         String firstStep = getNextStep(grid[0][0]);
         String secondStep = getNextStep(firstStep);
         int answer = 0;
