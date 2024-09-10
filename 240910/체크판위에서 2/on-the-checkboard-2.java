@@ -10,6 +10,7 @@ public class Main {
             .toArray();
 
         int n = sizes[0];
+        int m = sizes[1];
 
         String[][] grid = new String[n][];
 
@@ -22,10 +23,10 @@ public class Main {
         int answer = 0;
 
         for (int row1 = 1; row1 < n - 2; row1++) {
-            for (int col1 = 1; col1 < n - 2; col1++) {
+            for (int col1 = 1; col1 < m - 2; col1++) {
                 if (firstStep.equals(grid[row1][col1])) {
                     for (int row2 = row1 + 1; row2 < n - 1; row2++) {
-                        for (int col2 = col1 + 1; col2 < n - 1; col2++) {
+                        for (int col2 = col1 + 1; col2 < m - 1; col2++) {
                             if (secondStep.equals(grid[row2][col2])) {
                                 answer++;
                             }
