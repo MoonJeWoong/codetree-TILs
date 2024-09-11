@@ -10,7 +10,7 @@ public class Main {
             inputNums[iter] = Integer.parseInt(br.readLine());
         }
 
-        int answer = 0;
+        int answer = -1;
         for (int idx1 = 0; idx1 < n-2; idx1++) {
             for (int idx2 = idx1+1; idx2 < n-1; idx2++) {
                 for (int idx3 = idx2+1; idx3 < n; idx3++) {
