@@ -25,6 +25,12 @@ public class Main {
             locations[inputIndexes[iter]] = convertToScore(inputChars[iter]);
         }
 
+        if (maxLength - 1 <= firstLine[1]) {
+            int sum = Arrays.stream(locations).sum();
+            System.out.println(sum);
+            return;
+        }
+
         int answer = 0;
         for (int iter=1; iter<=firstLine[1]+1; iter++) {
             answer += locations[iter];
