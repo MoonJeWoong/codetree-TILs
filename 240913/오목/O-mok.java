@@ -20,8 +20,8 @@ public class Main {
         
         int answer = 0;
         int[] answerCoordinate = {-1, -1};
-        for (int row=0; row<n-4; row++) {
-            for (int col=0; col<n-4; col++) {
+        for (int row=0; row<n; row++) {
+            for (int col=0; col<n; col++) {
                 if (isWinner(row, col)) {
                     answer = grid[row][col];
                     answerCoordinate = getCenterCoordinate(row, col);
