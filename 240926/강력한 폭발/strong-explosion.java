@@ -71,8 +71,8 @@ public class Main {
             return;
         }
 
-        for (int[] bomb : bombLocations.subList(count, bombLocations.size())) {
-            for (List<int[]> bombCase : bombCases) {
+        int[] bomb = bombLocations.get(count);
+        for (List<int[]> bombCase : bombCases) {
                 for (int[] pos : bombCase) {
                     int explosionPosRow = bomb[0] + pos[0];
                     int explosionPosCol = bomb[1] + pos[1];
@@ -91,6 +91,5 @@ public class Main {
                     }
                 }
             }
-        }
     }
 }
