@@ -17,6 +17,10 @@ public class Main {
             inputLines.add(new Line(inputLine[0], inputLine[1]));
         }
         Collections.sort(inputLines);
+
+        // for (Line cur : inputLines) {
+        //     System.out.println(cur.start + " " + cur.end);
+        // }
         
         // rec(0)로 시작해서 입력된 선분 개수만큼 재귀를 돌도록 구현
         // rec(point)은 point 번째 선분을 채택할 수 있는지 여부를 판단하고 추가가 가능하다면 추가하는 기능 수행
@@ -29,6 +33,7 @@ public class Main {
     }
 
     private static void select(int point) {
+        // System.out.println("point: " + point);
         if (point == inputLines.size()) {
             answer = Math.max(answer, selected.size());
             return;
@@ -43,10 +48,10 @@ public class Main {
 
             // 넣은 선분 제거
             selected.remove(selected.size() - 1);
-        } else {
-            // 그 다음 선분 계산
-            select(point + 1);
-        }
+        } 
+
+        // 그 다음 선분 계산
+        select(point + 1);
     }
 }
 
