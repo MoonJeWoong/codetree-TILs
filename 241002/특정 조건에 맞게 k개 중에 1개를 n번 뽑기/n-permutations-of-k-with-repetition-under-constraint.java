@@ -29,8 +29,11 @@ public class Main {
         }
 
         for (int num=1; num<=k; num++) {
-            if (idx < 2 || (num != selected.get(idx - 1) && num != selected.get(idx - 2))) {
-                selected.add(num);
+            if (idx < 2 
+                || selected.get(idx - 1) != selected.get(idx - 2)
+                || (num != selected.get(idx - 1) && num != selected.get(idx - 2))
+                ) {
+                    selected.add(num);
             } else {
                 continue;
             }
