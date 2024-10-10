@@ -50,7 +50,8 @@ public class Main {
             int nextCol = col + dy[iter];
 
             if (isValidPosition(nextRow, nextCol) && matrix[row][col] < matrix[nextRow][nextCol]) {
-                maxStep = Math.max(findMaxStep(nextRow, nextCol) + 1, maxStep);
+                memoTable[nextRow][nextCol] = findMaxStep(nextRow, nextCol);
+                maxStep = Math.max(memoTable[nextRow][nextCol] + 1, maxStep);
             }
         }
 
